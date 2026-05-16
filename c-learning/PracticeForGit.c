@@ -44,7 +44,7 @@ int main(void)
     for (int i = 0; i < 14; i++) {
         printf("%d", c[i]);
         if (i < 13) {
-            putchar(' ');
+            putchar('         ');
         }
     }
 
