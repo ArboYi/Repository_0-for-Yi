@@ -69,6 +69,10 @@ git commit -m "first commit"
 
 ---
 
+## 5.回溯版本
+git restore 文件名
+或
+git restore .
 # =========================
 # 三、连接 GitHub（只做一次）
 # =========================
