@@ -1,25 +1,46 @@
 #include <stdio.h>
-void del(char *str, char *sub);
+#include <string.h>
+
+void del(char *str, const char *sub);
+
 int main(){
-    char str[100], sub[100];
-    fgets(str,sizeof(str),stdin);
-    fgets(sub, sizeof(sub), stdin);
+    char str[100];
+    char sub[100];
+
+    if (fgets(str, sizeof(str), stdin) == NULL) {
+        return 0;
+    }
+    if (fgets(sub, sizeof(sub), stdin) == NULL) {
+        return 0;
+    }
+
+    str[strcspn(str, "\n")] = '\0';    // strcspn
+    sub[strcspn(sub, "\n")] = '\0';
+
     del(str, sub);
     return 0;
 }
-void del(char *str, char *sub){
-    char *p = str;
-    char new[100];
-    char *q = new;
-    char *r = sub;
-    while (*p != '\0'){
-        if (*p != *r){
-            *q = *p;
-            p++;
-            q++;
-        }    
-        else p++;
+
+void del(char *str, const char *sub){
+    char result[100];
+    char *q = result;
+    size_t len = strlen(sub);
+
+    if (len == 0) {
+        printf("%s", str);
+        return;
     }
-    *q = '\0'; // 在新字符串末尾添加空字符
-    printf("%s", new);
+
+    while (*str != '\0'){
+        if (strncmp(str, sub, len) == 0){
+            str += len;
+        } else {
+            *q = *str;
+            q++;
+            str++;
+        }
+    }
+
+    *q = '\0';
+    printf("%s", result);
 }
