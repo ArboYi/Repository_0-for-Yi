@@ -73,6 +73,9 @@ git commit -m "first commit"
 git restore 文件名
 或
 git restore .
+回溯到特定版本  
+git checkout 8838aa2 -- c-learning/homework_6.c  
+可用git log --oneline -3查看日志
 # =========================
 # 三、连接 GitHub（只做一次）
 # =========================
