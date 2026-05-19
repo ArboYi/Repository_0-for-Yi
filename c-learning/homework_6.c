@@ -43,4 +43,5 @@ void del(char *str, const char *sub){
 
     *q = '\0';
     printf("%s", result);
+    printf("666");
 }
