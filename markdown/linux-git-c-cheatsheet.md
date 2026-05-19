@@ -70,11 +70,19 @@ git commit -m "first commit"
 ---
 
 ## 5.回溯版本
+回溯上一个版本
+
+
 git restore 文件名
 或
 git restore .
-回溯到特定版本  
-git checkout 8838aa2 -- c-learning/homework_6.c  
+
+
+回溯到特定版本：  
+
+git checkout 8838aa2 -- c-learning/
+homework_6.c  
+
 可用git log --oneline -3查看日志
 # =========================
 # 三、连接 GitHub（只做一次）
